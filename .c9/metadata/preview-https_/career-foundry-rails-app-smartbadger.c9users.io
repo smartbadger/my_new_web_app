@@ -1,0 +1,1 @@
+{"filter":false,"title":"[P] https://career-foundry-rails-app-smartbadger.c9users.io","undoManager":{"mark":-1,"position":-1,"stack":[]},"preview":{"path":"https://career-foundry-rails-app-smartbadger.c9users.io","previewer":"preview.browser","disableInjection":true},"timestamp":1502069626681,"hash":"da39a3ee5e6b4b0d3255bfef95601890afd80709"}
