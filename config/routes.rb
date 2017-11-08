@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'quiz/quiz_view'
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
