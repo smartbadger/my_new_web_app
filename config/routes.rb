@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get 'static_pages/index'
   root 'static_pages#index'
+  
+  get 'quiz/quiz_view'
+  root 'quiz#quiz_view'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
-  def index
+  def quiz_view
+  
   end
 end
