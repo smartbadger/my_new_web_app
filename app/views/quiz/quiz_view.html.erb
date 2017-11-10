@@ -1,3 +1,4 @@
+
 <div class="content">
     <div class="title">
         <h1>Cheese Quiz!</h1>
@@ -10,7 +11,13 @@
             <h2>question</h2>
         </div>
         <div class="quiz__answer">
-            <p>answer</p>
+            <p></p>
+        </div>
+        <div class="submit">
+            <p><%= @submitText.inspect %></p>
+        </div>
+        <div class="quiz__count">
+            <span><%= @count.inspect %> / <%= @totalQuestions.inspect %></span>
         </div>
     </div>
 </div>

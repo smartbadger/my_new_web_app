@@ -1,0 +1,80 @@
+{
+	"questions": {
+		"How many varieties of cheese are there?": {
+			"answers": [{
+					"2000": "true"
+				},
+				{
+					"1000": "false"
+				},
+				{
+					"500": "false"
+				},
+				{
+					"3000": "false"
+				}
+			]
+		},
+        "Which country consumes the most cheese annually?":{
+			"answers": [{
+					"Spain": "false"
+				},
+				{
+					"United States": "false"
+				},
+				{
+					"Greece": "true"
+				},
+				{
+					"Italy": "false"
+				}
+			]
+		},
+		"What is cheese made from?": {
+			"answers": [{
+					"Milk": "true"
+				},
+				{
+					"Bananas": "false"
+				},
+				{
+					"Coconuts": "false"
+				},
+				{
+					"Hydrogenated Vegetable Oil": "false"
+				}
+			]
+		},
+				"When was cheese invented?": {
+			"answers": [{
+					"1852": "false"
+				},
+				{
+					"1999": "false"
+				},
+				{
+					"6000 B.C.": "true"
+				},
+				{
+					"399 A.D.": "false"
+				}
+			]
+		},
+				"Which fast food chain uses the most cheese annually?": {
+			"answers": [{
+					"Pizza Hut": "true"
+				},
+				{
+					"Papa Johns": "false"
+				},
+				{
+					"Dominoes": "false"
+				},
+				{
+					"Mc-Donald's": "false"
+				}
+			]
+		}
+		
+	}
+}
