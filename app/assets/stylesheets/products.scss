@@ -1,3 +1,23 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.product{
+    
+ &__image {
+    
+    img{ 
+     width: 100%;
+     margin: auto;
+     max-height: 150px;
+     
+    }
+ }
+ &__text{
+     background-color: #d0d0d0;
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+    margin-bottom: 15px;
+ }
+ 
+}
