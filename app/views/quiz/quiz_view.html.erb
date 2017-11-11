@@ -4,15 +4,17 @@
         <h1>Cheese Quiz!</h1>
     </div>
     <div class="quiz-container">
-        <div class="quiz__header">
-            <h2>Header</h2>
-        </div>
+        
         <div class="quiz__question">
-            <h2>question</h2>
+            <h2><%= @currentQuestion.inspect %></h2>
         </div>
+        
+        <% @currentAnswers.each do |questions| %>
+        
         <div class="quiz__answer">
-            <p></p>
+            <p><%= questions.inspect %></p>
         </div>
+       <% end %>
         <div class="submit">
             <p><%= @submitText.inspect %></p>
         </div>
