@@ -1,6 +1,58 @@
-<div class="panel">
-    <h2>Feautured Product</h2>
-</div>
+<header class="display-container content wide" style="margin-top: 60px;">
+    <%= image_tag("brie.jpg", class: "img-responsive image") %>
+    <div class="display-middle padding-large opacity white"><h1>Isn't cheese great?</h1></div>
+</header>
+<div class="content">
+    <div class="row padding 64">
+        <div class="col m6 padding-large">
+            <%= image_tag("parm.jpg", class: "round opacity-min image") %>
+        </div>
+        <div class="col m6 padding-large">
+            <h1 class="center">Aged Parmesan</h1>
+            <p class="center">Revered as one of the world's great cheeses, Parmigiano-Reggiano is superb on its own, nibbled in small bits, or added as a one-of-a-kind savory flavor to countless dishes, from antipasti to salads to polenta and more. Authentic Parmigiano-Reggiano comes from Emilia-Romagna, the region in northern Italy that also produces true prosciutto di Parma and balsamic vinegar.</p>
+            <div class="row">
+            <h3 class="col center padding-large">$400</h3>
+            <h3 class="col center gray padding-large button">Out of Stock</h3>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Feautured Products</h2>
 <div>
-    <%= @featured_product.name %>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="..." alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="..." alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 </div>
