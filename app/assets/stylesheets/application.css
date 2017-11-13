@@ -265,7 +265,12 @@ a {
     color: inherit
 }
 
-
+.item {
+    img {
+        margin: auto;
+        height: 300px;
+    }
+}
 .table,.table-all {
     border-collapse: collapse;
     border-spacing: 0;
