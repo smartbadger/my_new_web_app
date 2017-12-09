@@ -19,14 +19,19 @@
 <nav class="bar white padding card-2 top">
   <h3 class="left">We Love Cheese!</h3>
   <ul class="right">
-    <li class="bar-item button"><a href="/">Home</a></li>
-    <li class="bar-item button"><a href="/products">Products</a></li>
-    <li class="bar-item button"><a href="/static_pages/about">About</a></li>
+    <li class="bar-item button"><%= link_to "Home", static_pages_index_path %></li>
+    <li class="bar-item button"><%= link_to "Products", products_path %></li>
+    <li class="bar-item button"><%= link_to "About", static_pages_about_path %></li>
+    <li><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+  <!-- <%= form.label :q, 'Search for:' %> no need for search label when the placeholder and button are marked so the user knows what to do --> 
+  <%= form.text_field :q, id: 'q', value: params[:q] %>
+  <%= form.submit 'Search' %>
+<% end %></li>
   </ul>
 </nav>
-
+<div class="container">
 <%= yield %>
-
+</div>
 <footer class="center light-grey padding-32">
    <h5> &copy; We Love Cheese </h5>
 </footer>
