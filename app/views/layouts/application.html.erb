@@ -17,8 +17,7 @@
  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
-         <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
 <nav class="bar white padding card-2 top">
   <h3 class="left">We Love Cheese!</h3>
   <ul class="right">
@@ -35,6 +34,12 @@
   </ul>
 </nav>
   <div class="container panel">
+    <% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if notice %>
+    <p id="alert" class="alert alert-info"><%= alert %></p>
+<% end %>
   <%= yield %>
   </div>
 <footer class="center light-grey padding-32">
