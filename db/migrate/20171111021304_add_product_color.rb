@@ -1,4 +1,4 @@
-class AddProductColor < ActiveRecord::Migration
+class AddProductColor < ActiveRecord::Migration[5.1]
   def change
     add_column :products, :color, :string
   end

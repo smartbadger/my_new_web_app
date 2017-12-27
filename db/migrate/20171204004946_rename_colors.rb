@@ -1,4 +1,4 @@
-class RenameColors < ActiveRecord::Migration
+class RenameColors < ActiveRecord::Migration[5.1]
   def change
     rename_column :products, :colour, :color
   end
