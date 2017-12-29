@@ -54,7 +54,7 @@ group :development do
   gem 'jquery-rails'
   
   gem 'sqlite3'
-  gem 'rspec', '~> 3.0'
+  gem 'rspec-rails'
   
   
 end
