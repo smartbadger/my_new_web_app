@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   get 'orders/index'
   get 'simple_pages/thank_you'
-  get 'static_pages/about'
-  get 'static_pages/landing_page'
-  get 'static_pages/index'
-  get 'static_pages/contact'
+  get 'simple_pages/about'
+  get 'simple_pages/landing_page'
+  get 'simple_pages/index'
+  get 'simple_pages/contact'
   post 'simple_pages/thank_you'
   
-  root 'static_pages#index'
+  root 'simple_pages#index'
 
 end

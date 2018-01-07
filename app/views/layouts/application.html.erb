@@ -21,9 +21,9 @@
 <nav class="bar white padding card-2 top">
   <h3 class="left">We Love Cheese!</h3>
   <ul class="right">
-    <li class="bar-item button"><%= link_to "Home", static_pages_index_path %></li>
+    <li class="bar-item button"><%= link_to "Home", simple_pages_index_path %></li>
     <li class="bar-item button"><%= link_to "Products", products_path %></li>
-    <li class="bar-item button"><%= link_to "About", static_pages_about_path %></li>
+    <li class="bar-item button"><%= link_to "About", simple_pages_about_path %></li>
     <li>
   <% if user_signed_in? %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
