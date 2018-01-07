@@ -32,7 +32,7 @@ gem 'cancancan'
 
 gem 'seed_dump'
 gem 'will_paginate', '~> 3.1.1'
-
+gem 'rails-controller-testing'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -55,6 +55,7 @@ group :development do
   
   gem 'sqlite3'
   gem 'rspec-rails'
+  
   
   
 end
