@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe StaticPagesController, type: :controller do
+describe SimplePagesController, type: :controller do
   context 'GET #index' do
     it 'renders the index template' do
       get :index
