@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
 
 def index
-  byebug
+  #byebug
   if params[:q]
     search_term = params[:q]
     @products = Product.search(search_term)
