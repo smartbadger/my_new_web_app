@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-describe User do
-    context "no data passed in" do
-        
-        it "password too short" do
-            expect(User.new(first_name: "Lala", last_name:"lolo", email: "lalalola@yahoo.com", password: "text")).not_to be_valid
-        end
-    end
+describe User, type: :model do
+  it "do not validate users without emai" do
+    @user = FactoryBot.build(:user, email: "not_an_email")
+    expect(@user).to_not be_valid
+  end
 end
