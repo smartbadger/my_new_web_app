@@ -13,7 +13,7 @@
 
 <p>
   <strong>Product Image</strong>
-  <%= image_tag(@product.image_url, class: "img-responsive image") %> 
+  <%= image_tag(@product.image_url, class: "img-responsive image img-zoom", data_zoom_image: "@product.image_url") %> 
 </p>
 
 <p>
