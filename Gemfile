@@ -35,7 +35,7 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'rails-controller-testing'
 
 gem 'rails-controller-testing'
-
+gem 'stripe'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
