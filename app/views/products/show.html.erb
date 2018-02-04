@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<% cache @product do %>
+  <h2><%= @product.name %></h2>
+  <p><%= @product.description %></p>
+<% end %>
 
 <p>
   <strong>Name:</strong>

@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
 
 def index
   #byebug
+  Rails.cache.write("foo", "bar")
+  puts Rails.cache.read("foo")
   if params[:q]
     search_term = params[:q]
     @products = Product.search(search_term)

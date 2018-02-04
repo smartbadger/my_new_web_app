@@ -1,4 +1,9 @@
 <div class="content">
+<% cache do %>
+  <% sleep 2 %>
+  <h1>Hello World!</h1>
+<% end %>
+
     <div style="margin-top: 80px;">
         <%= image_tag("hero-cheese.png", class: "img-responsive image") %>
         <h1>Why Cheese?</h1>
