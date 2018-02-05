@@ -38,6 +38,7 @@ gem 'rails-controller-testing'
 gem 'stripe'
 gem 'brakeman'
 gem 'dalli'
+gem 'redis-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -63,6 +64,7 @@ group :development do
   gem 'rspec-rails'
   gem "factory_bot_rails", "~> 4.0"
   gem 'byebug'
+  
   
   
 end

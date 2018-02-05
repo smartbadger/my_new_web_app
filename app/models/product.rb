@@ -8,7 +8,6 @@ class Product < ActiveRecord::Base
      else
       Product.where("name iLIKE ?", "%#{search_term}%")
      end
-     
     end
     def highest_rating_comment
      comments.rating_desc.first
@@ -18,5 +17,11 @@ class Product < ActiveRecord::Base
     end
     def average_rating
      comments.average(:rating).to_f
+    end
+    def views
+      $redis.get("product:#{id}") # this is equivalent to 'GET product:1'
+    end
+    def viewed!
+      $redis.incby("product:#{id}") # this is equivalent to 'INC product:1'
     end
 end
