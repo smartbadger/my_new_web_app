@@ -38,7 +38,7 @@ gem 'rails-controller-testing'
 gem 'stripe'
 gem 'brakeman'
 gem 'dalli'
-gem 'redis-rails'
+gem 'redis'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
