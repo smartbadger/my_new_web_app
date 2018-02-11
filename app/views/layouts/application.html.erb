@@ -35,10 +35,10 @@
 </nav>
   <div class="container panel">
     <% if notice %>
-    <p id="notice" class="alert alert-info"><%= notice %></p>
+    <p id="notice" class="alert alert-notice"><%= notice %></p>
 <% end %>
 <% if alert %>
-    <p id="alert" class="alert alert-info"><%= alert %></p>
+    <p id="alert" class="alert alert-warning"><%= alert %></p>
 <% end %>
   <%= yield %>
   </div>
