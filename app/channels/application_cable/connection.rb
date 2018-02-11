@@ -10,15 +10,16 @@ module ApplicationCable
     def disconnect
 
     end
-  end
-end
+  
 
-protected
+  protected
 
-  def find_verified_user
-    if verified_user = request.env['warden'].user
-      verified_user
-    else
-      reject_unauthorized_connection
+    def find_verified_user
+      if verified_user = request.env['warden'].user
+        verified_user
+      else
+        reject_unauthorized_connection
+      end
     end
   end
+end
