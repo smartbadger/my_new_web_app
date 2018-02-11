@@ -18,7 +18,7 @@ end
   # GET /products/1.json
   def show
      @comments = @product.comments.paginate(page: params[:page], per_page: 5)
-     #@product.views
+     @product.views
   end
 
   # GET /products/new
