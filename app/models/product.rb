@@ -20,8 +20,9 @@ class Product < ActiveRecord::Base
     end
     def views
       $redis.get("product:#{id}") # this is equivalent to 'GET product:1'
+      viewed!
     end
     def viewed!
-      $redis.incby("product:#{id}") # this is equivalent to 'INC product:1'
+      $redis.INCRBY("product:#{id}", 1) # this is equivalent to 'INC product:1'
     end
 end
