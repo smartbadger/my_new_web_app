@@ -24,7 +24,7 @@
     <li class="bar-item button"><%= link_to "Home", simple_pages_index_path %></li>
     <li class="bar-item button"><%= link_to "Products", products_path %></li>
     <li class="bar-item button"><%= link_to "About", simple_pages_about_path %></li>
-    <li>
+    <li class="bar-item button">
   <% if user_signed_in? %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <% else %>

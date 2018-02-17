@@ -23,7 +23,14 @@
     <li class="bar-item button"><%= link_to "Products", products_path %></li>
     <li class="bar-item button"><%= link_to "About", simple_pages_about_path %></li>
     <li class="bar-item button"><%= link_to "Contact", simple_pages_contact_path %></li>
-    <li><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+        <li class="bar-item button">
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to('Login', new_user_session_path) %>
+  <% end %>
+  </li>
+    <li class="bar-item button"><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
   <!-- <%= form.label :q, 'Search for:' %> no need for search label when the placeholder and button are marked so the user knows what to do --> 
   <%= form.text_field :q, id: 'q', value: params[:q] %>
   <%= form.submit 'Search', class:'btn' %>
