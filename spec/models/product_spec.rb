@@ -12,7 +12,19 @@ describe Product do
       expect(product.average_rating).to eq(3)
     end
     it "is not valid without a name" do
-      expect(Product.new(description:"Nice Bike")).not_to be_valid
+      expect(Product.new(name: nil)).not_to be_valid
+    end
+    it "is not valid without a style" do
+      expect(Product.new(style: nil)).not_to be_valid
+    end
+    it "is not valid without a image" do
+      expect(Product.new(description: nil)).not_to be_valid
+    end
+    it "is not valid without a color" do
+      expect(Product.new(color: nil)).not_to be_valid
+    end
+    it "is not valid without a description" do
+      expect(Product.new(description: nil)).not_to be_valid
     end
   end
 end

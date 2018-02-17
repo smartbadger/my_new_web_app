@@ -39,6 +39,7 @@ gem 'stripe'
 gem 'brakeman'
 gem 'dalli'
 gem 'redis'
+gem 'redis-rails', '~> 5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -64,6 +65,7 @@ group :development do
   gem 'rspec-rails'
   gem "factory_bot_rails", "~> 4.0"
   gem 'byebug'
+  gem 'factory_girl_rails'
   
   
   
