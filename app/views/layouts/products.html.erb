@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cheeeeeese</title>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= csrf_meta_tags %>
-  
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</head>
-<nav class="bar white padding card-2 top">
-  <h3 class="left">We Love Cheese!</h3>
-  <ul class="right">
-    <li class="bar-item button"><%= link_to "Home", simple_pages_index_path %></li>
-    <li class="bar-item button"><%= link_to "Products", products_path %></li>
-    <li class="bar-item button"><%= link_to "About", simple_pages_about_path %></li>
-    <li class="bar-item button"><%= link_to "Contact", simple_pages_contact_path %></li>
-        <li class="bar-item button">
-  <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <% else %>
-    <%= link_to('Login', new_user_session_path) %>
-  <% end %>
-  </li>
-    <li class="bar-item button"><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-  <!-- <%= form.label :q, 'Search for:' %> no need for search label when the placeholder and button are marked so the user knows what to do --> 
-  <%= form.text_field :q, id: 'q', value: params[:q] %>
-  <%= form.submit 'Search', class:'btn' %>
-<% end %></li>
-  </ul>
-</nav>
-<div class="container panel">
-<%= yield %>
-</div>
-<footer class="center light-grey padding-32">
-   <h5> &copy; We Love Cheese </h5>
-</footer>
-
+  <head>
+    <title>Cheeeeeese</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <nav class="bar white padding card-2 top">
+    <h3 class="left">We Love Cheese!</h3>
+    <ul class="right">
+      <li class="bar-item button"><%= link_to "Home", simple_pages_index_path %></li>
+      <li class="bar-item button"><%= link_to "Products", products_path %></li>
+      <li class="bar-item button"><%= link_to "About", simple_pages_about_path %></li>
+      <li class="bar-item button"><%= link_to "Contact", simple_pages_contact_path %></li>
+      <li class="bar-item button">
+        <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </li>
+      <li class="bar-item button"><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+        <!-- <%= form.label :q, 'Search for:' %> no need for search label when the placeholder and button are marked so the user knows what to do -->
+        <%= form.text_field :q, id: 'q', value: params[:q] %>
+        <%= form.submit 'Search', class:'btn' %>
+      <% end %></li>
+    </ul>
+  </nav>
+  <div class="container panel">
+    <%= yield %>
+  </div>
+  <footer class="center light-grey padding-32">
+    <h5> &copy; We Love Cheese </h5>
+  </footer>
 </html>

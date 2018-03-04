@@ -22,11 +22,6 @@ class QuizController < ApplicationController
      @parse = JSON.parse(file)
      @totalQuestions = @parse['questions'].count
      
-     
-     
   end
-  
-  
-
   
 end

@@ -1,22 +1,22 @@
 <% cache product do %>
 <div class="col-sm-2 col-md-4">
-  <% logger.debug "Product: #{product.name}"%>
- <div class="product__image">
-    <%= image_tag(product.image_url, class: "img-responsive") %>
- </div>
- <div class="product__text center">
-   <h3><%= link_to product.name, product_path(product.id) %></h3>
-   <p><%= product.description %><br>
-   Style:<%= product.style %><br>
-   Color:<%= product.color %>
-   </p>
-   <strong>Price: $<%= product.price %></strong>
-   <button>
-<%= link_to 'Edit Product', edit_product_path(product.id) %>
-</button>
-<button>
-<%= link_to 'Delete Product', product, method: :delete %>
-</button>
-</div>
+	<% logger.debug "Product: #{product.name}"%>
+	<div class="product__image">
+		<%= image_tag(product.image_url, class: "img-responsive") %>
+	</div>
+	<div class="product__text center">
+		<h3><%= link_to product.name, product_path(product.id) %></h3>
+		<p><%= product.description %><br>
+			Style:<%= product.style %><br>
+			Color:<%= product.color %>
+		</p>
+		<strong>Price: $<%= product.price %></strong>
+		<button>
+		<%= link_to 'Edit Product', edit_product_path(product.id) %>
+		</button>
+		<button>
+		<%= link_to 'Delete Product', product, method: :delete %>
+		</button>
+	</div>
 </div>
 <% end %>

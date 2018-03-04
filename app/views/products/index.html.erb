@@ -1,19 +1,17 @@
-
 <% products ||= @products %>
 <p id="notice"><%= notice %></p>
 <div class="container center panel">
-
-<h1>Listing Products</h1>
+	<h1>Listing Products</h1>
 </div>
 <div class="container-fluid">
-  <div class="row">
-  	<% cache(cache_key_for_products) do %>
-      <%= render @products %>
-    <% end %>
-  </div>
+	<div class="row">
+		<% cache(cache_key_for_products) do %>
+		<%= render @products %>
+		<% end %>
+	</div>
 </div>
 <div class="panel">
-<button>
-<%= link_to 'New Product', new_product_path %>
-</button>
+	<button>
+	<%= link_to 'New Product', new_product_path %>
+	</button>
 </div>

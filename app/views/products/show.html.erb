@@ -1,71 +1,63 @@
 <p id="notice"><%= notice %></p>
 <div data-product-id="<%= @product.id %>"
-<% cache @product do %>
+  <% cache @product do %>
   <h2><%= @product.name %></h2>
   <p><%= @product.description %></p>
-<% end %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-  <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-  <span class="glyphicon glyphicon-eye-open"><%= @product.views %></span>
-</p>
-
-<p>
-  <strong>Product Image</strong>
-  <%= image_tag(@product.image_url, class: "img-responsive image img-zoom", data_zoom_image: "@product.image_url") %> 
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<p>
-  <strong>Style:</strong>
-  <%= @product.style %>
-</p>
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p>
-<%= form_with(url: '/payments/create') do |form| %>
-  <%= render partial: "shared/stripe_checkout_button" %>
-    <%= hidden_field_tag(:product_id, @product.id) %>
-<% end %>
-<p>
-  <% if @product.lowest_rating_comment != nil %>
-  <strong>Best Comment</strong><br>
-  <span>Comment: </span>
-  <%= @product.highest_rating_comment.body %> 
-  <br>
-  <span>Rating: </span>
- <%= @product.highest_rating_comment.rating %>
-</p>
-<p>
-  
-  <strong>Worst Comment</strong><br>
-  <span>Comment: </span>
-  
-  <%= @product.lowest_rating_comment.body %> 
-  <br>
-  <span>Rating: </span>
- <%= @product.lowest_rating_comment.rating %>
   <% end %>
-</p>
-
-<%= render 'new_comment' %>
-<div class="alert alert-info" style="display:none" role="alert">Comment Posted!</div>
-<%= render 'comments' %>
-<%= will_paginate @comments %>
-
-
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+    <span class="glyphicon glyphicon-eye-open"><%= @product.views %></span>
+  </p>
+  <p>
+    <strong>Product Image</strong>
+    <%= image_tag(@product.image_url, class: "img-responsive image img-zoom", data_zoom_image: "@product.image_url") %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+  <p>
+    <strong>Style:</strong>
+    <%= @product.style %>
+  </p>
+  <p>
+    <strong>Color:</strong>
+    <%= @product.color %>
+  </p>
+  <%= form_with(url: '/payments/create') do |form| %>
+  <%= render partial: "shared/stripe_checkout_button" %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
+  <% end %>
+  <p>
+    <% if @product.lowest_rating_comment != nil %>
+    <strong>Best Comment</strong><br>
+    <span>Comment: </span>
+    <%= @product.highest_rating_comment.body %>
+    <br>
+    <span>Rating: </span>
+    <%= @product.highest_rating_comment.rating %>
+  </p>
+  <p>
+    
+    <strong>Worst Comment</strong><br>
+    <span>Comment: </span>
+    
+    <%= @product.lowest_rating_comment.body %>
+    <br>
+    <span>Rating: </span>
+    <%= @product.lowest_rating_comment.rating %>
+    <% end %>
+  </p>
+  <%= render 'new_comment' %>
+  <div class="alert alert-info" style="display:none" role="alert">Comment Posted!</div>
+  <%= render 'comments' %>
+  <%= will_paginate @comments %>
   <%= link_to 'Edit', edit_product_path(@product) %>
-
-<%= link_to 'Back', products_path %>
+  <%= link_to 'Back', products_path %>
 </div>

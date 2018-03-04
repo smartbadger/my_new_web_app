@@ -1,12 +1,11 @@
 class SimplePagesController < ApplicationController
+
     def landing_page
       @products = Product.all
     end
   
     def show
-  
     end
-
   
     def about
     end
