@@ -7,9 +7,9 @@
 </div>
 <div class="container-fluid">
   <div class="row">
-      <% products.each do |product| %>
-        <%= render partial: 'products/product', locals: { product: product } %>
-      <% end %>  
+  	<% cache(cache_key_for_products) do %>
+      <%= render @products %>
+    <% end %>
   </div>
 </div>
 <div class="panel">
