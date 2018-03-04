@@ -28,6 +28,7 @@ end
 
   # GET /products/1/edit
   def edit
+    authorize! :edit, @product
   end
 
   # POST /products
@@ -79,6 +80,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
+      authorize! :product_params, @product
       params.require(:product).permit(:name, :description, :image_url, :price, :style, :color)
     end
 end

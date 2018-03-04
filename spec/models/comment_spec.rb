@@ -9,7 +9,7 @@ describe Comment do
             expect(Comment.new(rating: nil)).not_to be_valid
         end
         it "not valid without text" do
-            expect(Comment.new(text: nil)).not_to be_valid
+            expect(Comment.new(body: nil)).not_to be_valid
         end
         it "not valid without rating" do
             expect(Comment.new(rating: nil)).not_to be_valid

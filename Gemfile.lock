@@ -69,11 +69,6 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
@@ -244,7 +239,6 @@ DEPENDENCIES
   dalli
   devise
   factory_bot_rails (~> 4.0)
-  factory_girl_rails
   jbuilder
   jquery-rails
   json

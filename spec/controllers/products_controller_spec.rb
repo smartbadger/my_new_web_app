@@ -15,7 +15,7 @@ describe ProductsController, type: :controller do
       @product = FactoryBot.create(:product)
     end
     it "displays show tempate" do
-      get :show, id: @product.id
+      get :show, params: {id: @product.id}
       expect(response).to be_ok
       expect(response).to render_template("show")
     end
@@ -54,15 +54,15 @@ describe ProductsController, type: :controller do
         sign_in @user_admin
       end
       it "shows edit template" do
-        get :edit, id: @product.id
+        get :edit, params: { id: @product.id}
         expect(response).to be_ok
         expect(response).to render_template("edit")
       end
     end
     context "no admin and not logged in" do
       it "redirects to login" do
-        get :edit, id: @product.id
-        expect(response).to redirect_to(new_user_session_path)
+        get :edit, params: { id: @product.id}
+        expect(response).to redirect_to(root_path)
       end
     end
     context "no admin and logged in" do
@@ -70,7 +70,7 @@ describe ProductsController, type: :controller do
         sign_in @user
       end
       it "redirects to root path" do
-        get :edit, id: @product.id
+        get :edit, params: {id: @product.id}
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(root_path)
       end
@@ -87,10 +87,6 @@ describe ProductsController, type: :controller do
       @product = FactoryBot.build(:product, name: "")
       expect(@product).not_to be_valid
     end
-    it "is an invalid product, price missing" do
-      @product = FactoryBot.build(:product, price: "")
-      expect(@product).not_to be_valid
-    end
   end
 
   describe 'PUT #update' do
@@ -100,16 +96,16 @@ describe ProductsController, type: :controller do
     it "updates the product name" do
       @user_admin = FactoryBot.create(:admin)
       sign_in @user_admin
-      @update = { name: "Tao", description: @product.description, image_url: @product.image_url, id: @product_id, price: @product.price }
-      put :update, id: @product.id, product: @update
+      @update = { name: "Swiss #2", description: @product.description, image_url: @product.image_url, id: @product_id, price: @product.price }
+      put :update, params: { id: @product.id, product: @update }
       @product.reload
-      expect(@product.name).to eq "Tao"
+      expect(@product.name).to eq "Swiss #2"
     end
     it "update the product name when not logged in or admin" do
-      @update = { name: "Tao", description: @product.description, image_url: @product.image_url, id: @product_id, price: @product.price }
-      put :update, id: @product.id, product: @update
+      @update = { name: "Swiss #2", description: @product.description, image_url: @product.image_url, id: @product_id, price: @product.price }
+      put :update, params: { id: @product.id, product: @update }
       @product.reload
-      expect(@product.name).not_to eq "Tao"
+      expect(@product.name).not_to eq "Swiss #2"
     end
   end
 
@@ -118,7 +114,7 @@ describe ProductsController, type: :controller do
       @product = FactoryBot.create(:product)
       @user_admin = FactoryBot.create(:admin)
       sign_in @user_admin
-      delete :destroy, id: @product.id
+      delete :destroy, params:{ id: @product.id}
       expect(response).to redirect_to products_path
     end
   end

@@ -60,12 +60,8 @@ group :development do
   gem 'spring'
   
   gem 'jquery-rails'
-  
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem "factory_bot_rails", "~> 4.0"
-  gem 'byebug'
-  gem 'factory_girl_rails'
+
   
   
   
@@ -74,10 +70,16 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+
   
   gem 'sqlite3'
   
+end
+
+group :test do 
+  gem 'rspec-rails'
+  gem 'byebug'
+  gem "factory_bot_rails", "~> 4.0"
 end

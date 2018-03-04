@@ -6,13 +6,15 @@ describe UsersController, type: :controller do
      context 'when a user is logged in' do
         before do
             sign_in user
+            get :index
+            expect(response).to have_http_status(200)
         end
      end
 
      context 'when a user is not logged in' do
        it 'redirects to login' do
-         get :show, params: { id: user.id }
-         expect(response).to redirect_to(new_user_session_path)
+         get :index, params: {user: @user}
+         expect(response).to render_template("index")
        end
      end
   end
